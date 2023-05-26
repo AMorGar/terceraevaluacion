@@ -21,24 +21,23 @@
       }
       //mete cruces solo si eel espacio es blanco
       int cruz = 0;
-      while(cruz<=3){
+      do{
         int i = (int) (Math.random() * 3);
         int j = (int) (Math.random() * 3);
-        if (tablero[i][j].equals("blanco")) {
           tablero[i][j] = "cruz";
           cruz++;             
-        }
-      } 
+        
+      }while(cruz<3);
      //mete circulos solo si eel espacio es blanco
       int circulo = 0;
-      while(circulo<=3){
+      do{
         int i = (int) (Math.random() * 3);
         int j = (int) (Math.random() * 3);
         if (tablero[i][j].equals("blanco")) {
           tablero[i][j] = "circulo";
           circulo++;        
         }
-      }
+      }while(circulo<3);
     %>
 
     <table>
@@ -49,7 +48,7 @@
       <tr>
       <%
       for (int j = 0; j < 3; j++) {
-      %><td><img src="<%out.print(tablero[1][1]+".png");%>"/></td>
+      %><td><img src="<%out.print(tablero[i][j]+".png");%>"/></td>
       <%
         }
       }
